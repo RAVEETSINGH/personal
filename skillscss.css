@@ -1,0 +1,168 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+
+/* Navigation Bar Styles */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Increased for higher stacking */
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4d;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4d;
+    border-bottom: 3px solid #b74b4d;
+}
+
+/* Mobile Styles */
+@media (max-width: 995px) {
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 60%;
+        border-left: 3px solid #b74b4d;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: #1b1b1b;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        transform: translateX(100%); /* Hide off-screen by default */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    nav.active {
+        display: block;
+        transform: translateX(0); /* Show when active */
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4d;
+    }
+}
+
+.skills {
+    height: 100vh;
+    margin-top: 100px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3.5rem;
+    padding-top: 80px;
+    color:#b74b4d;
+}
+
+.skills h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color:#b74b4d;
+}
+
+.sk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 10px; /* Reduced space between items */
+    width:550%; /* Reduced container width */
+    max-width:1000px; /* Max width for larger screens */
+    background-color: rgba(0, 0, 72, 0.558);
+    border-radius:40px;
+    padding:30px;
+    filter: drop-shadow(9px 7px 10px rgba(255, 255, 255, 0.341));
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.ski {
+    height:6rem; /* Size of the icons */
+    width:6rem; /* Size of the icons */
+}
+
+@media (max-width: 670px) {
+    .sk {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Responsive columns */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .ski {
+        height: 2.5rem; /* Adjust size for smaller screens */
+        width: 2.5rem; /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 710px) {
+    .skills {
+        padding-top: 400px;
+    }
+    
+}
